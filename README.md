@@ -1,11 +1,11 @@
-<div style="text-align:center">
+<p align="center">
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a76006ef343525947a07/maintainability)](https://codeclimate.com/github/dev-vortex/react-native-responsive-styles/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a76006ef343525947a07/test_coverage)](https://codeclimate.com/github/dev-vortex/react-native-responsive-styles/test_coverage)
 
 ![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg) 
 [![Conventiona Commits](https://img.shields.io/badge/conventional%20commits-friendly-pink)](https://www.conventionalcommits.org/)
-</div>
+</p>
 
 # react-native-responsive-styles
 
