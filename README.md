@@ -36,6 +36,6 @@ const styles = ResponsiveStyles.create({
 
 ResponsiveSheets will take the same stylesObject a regular StyleSheet will take. It is also possible to use annotations that will automatically apply the formulas to provide the expected result:
 
-- \<size\>@dp - will convert the device pixels to real pixels.
+- \<size\>@dp - will convert the Density-independent Pixels to device real pixels (based on density).
 - \<size\>@pt - will convert the points into correct font size.
 
