@@ -1,0 +1,21 @@
+{
+  "name": "@dev-vortex/react-native-responsive-styles",
+  "version": "1.0.0",
+  "description": "React Native responsive styling",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-vortex/react-native-responsive-styles.git"
+  },
+  "keywords": [],
+  "author": "joaocac",
+  "license": "ISC"
+}
