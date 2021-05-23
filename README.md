@@ -1,10 +1,11 @@
 <p align="center">
+    <a href="https://codeclimate.com/github/dev-vortex/react-native-responsive-styles/maintainability"><img src="https://api.codeclimate.com/v1/badges/a76006ef343525947a07/maintainability"/></a>
+    <a href="https://codeclimate.com/github/dev-vortex/react-native-responsive-styles/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a76006ef343525947a07/test_coverage"/></a>
+</p>
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a76006ef343525947a07/maintainability)](https://codeclimate.com/github/dev-vortex/react-native-responsive-styles/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a76006ef343525947a07/test_coverage)](https://codeclimate.com/github/dev-vortex/react-native-responsive-styles/test_coverage)
-
-![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg) 
-[![Conventiona Commits](https://img.shields.io/badge/conventional%20commits-friendly-pink)](https://www.conventionalcommits.org/)
+<p align="center">
+    <a href=""><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg"/></a>
+    <a href="https://www.conventionalcommits.org/"><img src="https://img.shields.io/badge/conventional%20commits-friendly-pink"/></a>
 </p>
 
 # react-native-responsive-styles
