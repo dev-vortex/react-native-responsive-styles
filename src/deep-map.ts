@@ -1,15 +1,6 @@
-import { ViewStyle, TextStyle, ImageStyle } from 'react-native'
-import { NamedStyles, NamedStyle } from './index'
+import { NamedStyle, NamedStyles, ConvertFunction, OriginalNamedStyles, RecurrentConversionFunction } from './types'
 
-type OriginalNamedStyles<T> = {
-    [P in keyof T]: ViewStyle | TextStyle | ImageStyle
-}
-type ConversionFunction = (val: any) => any
-type RecurrentConversionFunctionNew = <T>(
-    value: T | string,
-) => OriginalNamedStyles<T>
-
-const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunctionNew) =>
+const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunction) =>
     Object.keys(obj).reduce((res, key: string) => {
         const value = obj[key] as string
         return {
@@ -18,16 +9,16 @@ const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunctionNew) =>
         }
     }, {}) as OriginalNamedStyles<T>
 
-const isObject = (myVar: unknown): boolean =>
+const isObject = (myVar: any): boolean =>
     myVar && typeof myVar === 'object' ? true : false
 
 const deepMap = <T extends NamedStyles<T> | NamedStyles<any>>(
     styles: T | any,
-    fn: ConversionFunction,
+    fn: ConvertFunction,
 ): OriginalNamedStyles<T> => {
     const deepMapper = (value => {
         return isObject(value) ? deepMap(value, fn) : fn(value)
-    }) as RecurrentConversionFunctionNew
+    }) as RecurrentConversionFunction
 
     if (Array.isArray(styles)) {
         return styles.map(style => deepMapper(style)) as OriginalNamedStyles<T>
