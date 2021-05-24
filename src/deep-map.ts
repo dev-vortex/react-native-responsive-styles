@@ -1,4 +1,10 @@
-import { NamedStyle, NamedStyles, ConvertFunction, OriginalNamedStyles, RecurrentConversionFunction } from './types'
+import {
+    NamedStyle,
+    NamedStyles,
+    ConvertFunction,
+    OriginalNamedStyles,
+    RecurrentConversionFunction,
+} from './types'
 
 const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunction) =>
     Object.keys(obj).reduce((res, key: string) => {

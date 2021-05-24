@@ -1,8 +1,4 @@
-import {
-    ViewStyle,
-    TextStyle,
-    ImageStyle,
-} from '@types/react-native'
+import { ViewStyle, TextStyle, ImageStyle } from '@types/react-native'
 
 export interface StringifiedStyles {
     fontSize?: string | number
@@ -41,8 +37,8 @@ export type RecurrentConversionFunction = <T>(
     value: T | string,
 ) => OriginalNamedStyles<T>
 
-export interface ConvertFunction { 
-    (value: any): any 
+export interface ConvertFunction {
+    (value: any): any
 }
 
 export type ConvertFunctions = Array<ConvertFunction>
@@ -50,6 +46,6 @@ export type ConvertFunctions = Array<ConvertFunction>
 export interface DimensionCreationFunction {
     <T extends NamedStyles<T> | NamedStyle>(
         styleSheet: T,
-        chain?: ConvertFunctions
-    ): OriginalNamedStyles<NamedStyles<T|any>>
+        chain?: ConvertFunctions,
+    ): OriginalNamedStyles<NamedStyles<T | any>>
 }
