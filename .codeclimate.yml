@@ -3,5 +3,9 @@ eslint:
     config:
         extensions:
             - .es6
-            - .js
+            - .ts
             - .mjs
+exclude_patterns:
+  - ".yarn/"
+  - "scripts/"
+  - "pnp.js"
