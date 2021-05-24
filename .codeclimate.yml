@@ -1,0 +1,7 @@
+eslint:
+    enabled: true
+    config:
+        extensions:
+            - .es6
+            - .js
+            - .mjs
