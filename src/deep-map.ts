@@ -1,10 +1,10 @@
 import {
     NamedStyle,
     NamedStyles,
-    ConvertFunction,
+    ConvertPluginFunction,
     OriginalNamedStyles,
     RecurrentConversionFunction,
-} from './types'
+} from '~/types'
 
 const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunction) =>
     Object.keys(obj).reduce((res, key: string) => {
@@ -20,7 +20,7 @@ const isObject = (myVar: any): boolean =>
 
 const deepMap = <T extends NamedStyles<T> | NamedStyles<any>>(
     styles: T | any,
-    fn: ConvertFunction,
+    fn: ConvertPluginFunction,
 ): OriginalNamedStyles<T> => {
     const deepMapper = (value => {
         return isObject(value) ? deepMap(value, fn) : fn(value)

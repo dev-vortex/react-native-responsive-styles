@@ -1,17 +1,21 @@
 import {
-    ConvertFunction,
+    ConvertPluginFunction,
     ConvertFunctions,
     DimensionCreationFunction,
-} from './types'
-import deepMap from './deep-map'
+} from '~/types'
+import deepMap from '~/deep-map'
+export * from '~/plugins'
 
 const create: DimensionCreationFunction = (
     stylesheet,
     chain: ConvertFunctions = [],
 ) => {
-    return chain.reduce((previousStyle: any, chainFuntion: ConvertFunction) => {
-        return deepMap(previousStyle, chainFuntion)
-    }, stylesheet)
+    return chain.reduce(
+        (previousStyle: any, chainFuntion: ConvertPluginFunction) => {
+            return deepMap(previousStyle, chainFuntion)
+        },
+        stylesheet,
+    )
 }
 
 const correctDimensionCreator = {
@@ -19,3 +23,8 @@ const correctDimensionCreator = {
 }
 
 export default correctDimensionCreator
+export type {
+    ConvertPluginFunction,
+    ConvertFunctions,
+    DimensionCreationFunction,
+}

@@ -1,1 +1,1 @@
-export { dpPtCorrection } from './dpPtCorrection'
+export { getDpPtCorrection } from './dpPtCorrection'

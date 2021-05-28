@@ -37,11 +37,11 @@ export type RecurrentConversionFunction = <T>(
     value: T | string,
 ) => OriginalNamedStyles<T>
 
-export interface ConvertFunction {
+export interface ConvertPluginFunction {
     (value: any): any
 }
 
-export type ConvertFunctions = Array<ConvertFunction>
+export type ConvertFunctions = Array<ConvertPluginFunction>
 
 export interface DimensionCreationFunction {
     <T extends NamedStyles<T> | NamedStyle>(

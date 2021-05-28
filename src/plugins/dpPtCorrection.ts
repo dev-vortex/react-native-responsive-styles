@@ -1,4 +1,4 @@
-import { ConvertFunction } from '~/types'
+import { ConvertPluginFunction } from '~/types'
 
 let definedPixelRatio = 1
 let definedFontScale = 1
@@ -6,7 +6,7 @@ let definedFontScale = 1
 export const getDpPtCorrection = (
     pixelRatio: number,
     fontScale: number,
-): ConvertFunction => {
+): ConvertPluginFunction => {
     definedPixelRatio = pixelRatio
     definedFontScale = fontScale
     return dpPtCorrection
