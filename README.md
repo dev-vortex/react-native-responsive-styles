@@ -27,8 +27,16 @@ When developing with react-native, we constantly need to manually adjust styles 
 The idea was to allow a "replacement" or improvement to react styling by allowing a "chain" that will "understand" the provided styling, calculate the values and return the styles from react native style.
 
 ## ResponsiveSheets
-```javascript
-import { ResponsiveStyles } from '@dev-vortex/react-native-responsive-styles'
+```typescript
+import { StyleSheet, PixelRatio } from 'react-native'
+import ResponsiveStyles, { getDpPtCorrection } from '@dev-vortex/react-native-responsive-styles'
+
+const dpPtCorrectionPlugin = getDpPtCorrection(PixelRatio.get(), PixelRatio.getFontScale())
+
+const pluginsChain = [
+    dpPtCorrectionPlugin, 
+    StyleSheet.create
+]
 
 const styles = ResponsiveStyles.create({
     container: {
@@ -40,7 +48,8 @@ const styles = ResponsiveStyles.create({
     descriptionText: {
         fontSize: '14@pt',
     },
-})
+}, pluginsChain)
+
 ...
 ```
 
