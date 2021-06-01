@@ -20,4 +20,4 @@ jobs:
           - alpha
         provider: script
         cleanup: false
-        script: npx semantic-release
+        script: npx semantic-release --branches ['main', 'next', 'next-major', {name: 'beta', prerelease: true}, {name: 'alpha', prerelease: true}]
