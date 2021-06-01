@@ -58,3 +58,7 @@ ResponsiveSheets will take the same stylesObject a regular StyleSheet will take.
 - `<size>@dp` - will convert the Density-independent Pixels to device real pixels (based on density).
 - `<size>@pt` - will convert the points into correct font size.
 
+## Custom plugins
+It is possible to create and add plugins to the chain (second argument in `create`)
+
+The plugin signature is defined by the interface `ConvertPluginFunction`. And it should expect to receive the value of a style attribute and return the same value but with the conversion applied (or the same if nothing need to be converted).
