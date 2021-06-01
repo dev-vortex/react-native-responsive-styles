@@ -53,20 +53,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "release": {
-    "branches": [
-        "master", 
-        "next", 
-        {
-            "name": "beta", 
-            "prerelease": true
-        },
-        {
-            "name": "alpha", 
-            "prerelease": true
-        }
-    ]
-  },
   "unpkg": "dist/index.js",
   "jsdelivr": "dist/index.js"
 }
