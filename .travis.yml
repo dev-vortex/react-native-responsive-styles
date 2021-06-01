@@ -13,13 +13,11 @@ jobs:
       deploy:
         on:
           branch:
-            only:
-            - main
-            - next
-            - next-major
-            - beta
-            - alpha
+          - main
+          - next
+          - next-major
+          - beta
+          - alpha
         provider: script
-        skip_cleanup: true
-        script:
-          - npx semantic-release
+        cleanup: false
+        script: npx semantic-release
