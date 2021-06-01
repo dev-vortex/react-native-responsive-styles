@@ -20,4 +20,4 @@ jobs:
           - alpha
         provider: script
         cleanup: false
-        script: "npx semantic-release"
+        script: "yarn run semantic-release"
