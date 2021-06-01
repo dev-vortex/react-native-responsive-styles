@@ -22,7 +22,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "npx tsc && copyfiles -u 1 \"src/**/*.d.ts\" dist && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "build": "tsc && copyfiles -u 1 \"src/**/*.d.ts\" dist && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "release": "semantic-release",
     "prepare": "npm run build",
     "cm": "cz",
