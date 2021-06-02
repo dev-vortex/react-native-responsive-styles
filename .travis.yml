@@ -19,5 +19,5 @@ jobs:
           - beta
           - alpha
         provider: script
-        cleanup: false
+        skip_cleanup: true
         script: "yarn run semantic-release"
