@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg"/>
+    <a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg"/></a>
     <a href="https://www.conventionalcommits.org/"><img src="https://img.shields.io/badge/conventional-commits-pink"/></a>
 </p>
 
@@ -31,6 +31,7 @@ A React-Native utility created to allow correct size attribution to elements on 
 yarn add @dev-vortex/react-native-responsive-styles
 ```
 or
+
 
 ```
 npm install --save @dev-vortex/react-native-responsive-styles
