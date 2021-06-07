@@ -15,14 +15,13 @@
     "type": "git",
     "url": "https://github.com/dev-vortex/react-native-responsive-styles.git"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "typings": "src/index.d.ts",
+  "main": "dist/index",
+  "typings": "dist/index",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc && copyfiles -u 1 \"src/**/*.d.ts\" dist && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "build": "tsc && copyfiles -u 1 \"src/types/*.d.ts\" dist && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "release": "semantic-release",
     "prepare": "npm run build",
     "commit": "cz",
