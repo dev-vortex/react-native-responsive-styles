@@ -1,9 +1,7 @@
 import { ConvertPluginFunction } from '~/types'
+import deepMap from '~/deep-map'
 
-// let definedPixelRatio = 1
-// let definedFontScale = 1
-
-const dpPtCorrection =
+const dpPtCorrectionImplementation =
     (definedPixelRatio = 1, definedFontScale = 1): ConvertPluginFunction =>
     (value: any) => {
         // Groups                      Size (number)           Selector (type)
@@ -33,6 +31,15 @@ const dpPtCorrection =
         }
 
         return result
+    }
+
+const dpPtCorrection =
+    (definedPixelRatio = 1, definedFontScale = 1): ConvertPluginFunction =>
+    (styles: any) => {
+        return deepMap(
+            styles,
+            dpPtCorrectionImplementation(definedPixelRatio, definedFontScale),
+        )
     }
 
 export const getDpPtCorrection = (

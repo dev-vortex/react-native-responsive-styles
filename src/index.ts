@@ -3,7 +3,6 @@ import {
     ConvertFunctions,
     DimensionCreationFunction,
 } from '~/types'
-import deepMap from '~/deep-map'
 export * from '~/plugins'
 
 const create: DimensionCreationFunction = (
@@ -11,9 +10,8 @@ const create: DimensionCreationFunction = (
     chain: ConvertFunctions = [],
 ) => {
     return chain.reduce(
-        (previousStyle: any, chainFuntion: ConvertPluginFunction) => {
-            return deepMap(previousStyle, chainFuntion)
-        },
+        (previousStyle: any, chainFuntion: ConvertPluginFunction) =>
+            chainFuntion(previousStyle),
         stylesheet,
     )
 }
