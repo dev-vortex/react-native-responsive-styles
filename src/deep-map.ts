@@ -6,6 +6,9 @@ import {
     RecurrentConversionFunction,
 } from '~/types'
 
+/**
+ * Maps the provided object with the corrected values if applicable
+ */
 const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunction) =>
     Object.keys(obj).reduce((res, key: string) => {
         const value = obj[key] as string
@@ -13,7 +16,7 @@ const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunction) =>
             ...res,
             ...{ [key]: fn(value) },
         }
-    }, {}) as OriginalNamedStyles<T>
+    }, {}) as NamedStyles<T>
 
 const isObject = (myVar: any): boolean =>
     myVar && typeof myVar === 'object' ? true : false
@@ -21,7 +24,7 @@ const isObject = (myVar: any): boolean =>
 const deepMap = <T extends NamedStyles<T> | NamedStyles<any>>(
     styles: T | any,
     fn: ConvertPluginFunction,
-): OriginalNamedStyles<T> => {
+): NamedStyles<T> => {
     const deepMapper = (value => {
         return isObject(value) ? deepMap(value, fn) : fn(value)
     }) as RecurrentConversionFunction
