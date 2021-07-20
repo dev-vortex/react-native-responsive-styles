@@ -62,9 +62,10 @@
   },
   "mocha": {
     "diff": true,
+    "reporter": "spec",
     "spec": "tests/**/*.test.ts",
     "require": ["ts-node/register", "tsconfig-paths/register"],
-    "watch-ignore": ["tests/*"]
+    "watch-files": ["src/**/*", "tests/**/*"]
   },
   "nyc": {
     "include": "src",
