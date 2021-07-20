@@ -14,10 +14,12 @@ jobs:
     - stage: test
       # if: branch = main
       name: "Unit Tests" 
+      provider: script
       script: "yarn run test"
 
     - stage: coverage_report
       name: "Coverage"
+      provider: script
       before_script:
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         - chmod +x ./cc-test-reporter
@@ -50,3 +52,4 @@ jobs:
         provider: script
         skip_cleanup: true
         script: "yarn run semantic-release"
+  
