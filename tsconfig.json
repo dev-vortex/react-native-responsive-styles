@@ -6,7 +6,7 @@
     "declaration": true,
     "sourceMap": true,
     "outDir": "dist",
-    "rootDir": "./",
+    "rootDir": "src",
     "removeComments": true,
     "strict": true,
     "alwaysStrict": true,
@@ -19,5 +19,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["dist/**/*"]
+  "exclude": ["dist/**/*", "tests/**/*"]
 }

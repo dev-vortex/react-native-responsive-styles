@@ -310,9 +310,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dev-vortex/react-native-responsive-styles@workspace:."
   dependencies:
-    "@tsconfig/node14": ^1.0.1
     "@types/chai": ^4.2.21
     "@types/mocha": ^8.2.3
+    "@types/node": ^16.4.0
     "@types/react-native": ^0.64.5
     "@typescript-eslint/eslint-plugin": ^4.25.0
     "@typescript-eslint/parser": ^4.25.0
@@ -854,7 +854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node14@npm:^1.0.0, @tsconfig/node14@npm:^1.0.1":
+"@tsconfig/node14@npm:^1.0.0":
   version: 1.0.1
   resolution: "@tsconfig/node14@npm:1.0.1"
   checksum: d0068287dba46dc98e7d49c229b0fee034fbac2bb4bc2efe12cc67227a1c68ec0728ca1e535dff7f033f7455de6c67e9b8f9d90f4fc3bb07c0d9ac08186fe65c
@@ -913,7 +913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^16.4.0":
   version: 16.4.0
   resolution: "@types/node@npm:16.4.0"
   checksum: 3f2aaccbe8795079dad399f9c0e90ebf97093835dbbe93284a3655b1c018b9db34c76b8ee16f14b06b6e6e3f69b23208055f8b7417be24f7eaaa048883af37c1

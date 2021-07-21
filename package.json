@@ -1,6 +1,7 @@
 {
   "name": "@dev-vortex/react-native-responsive-styles",
   "version": "0.0.0-development",
+  "types": "./src/types/index.d.ts",
   "description": "React Native responsive styling",
   "keywords": [
     "react",
@@ -32,9 +33,9 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@tsconfig/node14": "^1.0.1",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
+    "@types/node": "^16.4.0",
     "@types/react-native": "^0.64.5",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
