@@ -2,7 +2,10 @@ import { ConvertPluginFunction } from '~/types'
 import deepMap from '~/deep-map'
 
 const dpPtCorrectionImplementation =
-    (definedPixelRatio = 1, definedFontScale = 1): ConvertPluginFunction =>
+    (
+        definedPixelRatio: number,
+        definedFontScale: number,
+    ): ConvertPluginFunction =>
     (value: any) => {
         // Groups                      Size (number)           Selector (type)
         //                             1                       2
@@ -10,10 +13,6 @@ const dpPtCorrectionImplementation =
         const PX_PT_RATIO = 1.328
 
         let result = value
-        if (!validResponsiveRegex.test(value)) {
-            return value
-        }
-
         const regexExecResult = validResponsiveRegex.exec(value)
 
         if (regexExecResult) {
@@ -34,7 +33,10 @@ const dpPtCorrectionImplementation =
     }
 
 const dpPtCorrection =
-    (definedPixelRatio = 1, definedFontScale = 1): ConvertPluginFunction =>
+    (
+        definedPixelRatio: number,
+        definedFontScale: number,
+    ): ConvertPluginFunction =>
     (styles: any) => {
         return deepMap(
             styles,
@@ -43,6 +45,6 @@ const dpPtCorrection =
     }
 
 export const getDpPtCorrection = (
-    pixelRatio: number,
-    fontScale: number,
+    pixelRatio = 1,
+    fontScale = 1,
 ): ConvertPluginFunction => dpPtCorrection(pixelRatio, fontScale)

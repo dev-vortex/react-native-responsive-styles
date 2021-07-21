@@ -11,7 +11,7 @@ import {
  */
 const mapObject = <T>(obj: NamedStyle, fn: RecurrentConversionFunction) =>
     Object.keys(obj).reduce((res, key: string) => {
-        const value = obj[key] as string
+        const value = obj[key]
         return {
             ...res,
             ...{ [key]: fn(value) },
@@ -30,7 +30,7 @@ const deepMap = <T extends NamedStyles<T> | NamedStyles<any>>(
     }) as RecurrentConversionFunction
 
     if (Array.isArray(styles)) {
-        return styles.map(style => deepMapper(style)) as OriginalNamedStyles<T>
+        return styles.map(style => deepMap(style, fn)) as OriginalNamedStyles<T>
     }
     if (isObject(styles)) {
         return mapObject(styles, deepMapper)
