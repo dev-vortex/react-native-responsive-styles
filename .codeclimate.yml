@@ -8,3 +8,6 @@ eslint:
 exclude_patterns:
   - ".yarn/"
   - "scripts/"
+  - "tests/"
+  - "dist/"
+  - "src/@types"
