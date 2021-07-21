@@ -9,6 +9,9 @@ const create: DimensionCreationFunction = (
     stylesheet,
     chain: ConvertFunctions = [],
 ) => {
+    if (chain.length === 0) {
+        throw new Error('No chain provided')
+    }
     return chain.reduce(
         (previousStyle: any, chainFuntion: ConvertPluginFunction) =>
             chainFuntion(previousStyle),

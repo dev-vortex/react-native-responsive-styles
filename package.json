@@ -1,6 +1,7 @@
 {
   "name": "@dev-vortex/react-native-responsive-styles",
   "version": "0.0.0-development",
+  "types": "./src/types/index.d.ts",
   "description": "React Native responsive styling",
   "keywords": [
     "react",
@@ -22,6 +23,9 @@
   ],
   "scripts": {
     "build": "tsc && copyfiles -u 1 \"src/types/*.d.ts\" dist && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "test": "mocha",
+    "test:watch": "mocha -w",
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" yarn test",
     "release": "semantic-release",
     "prepare": "npm run build",
     "commit": "cz",
@@ -29,16 +33,24 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^16.4.0",
     "@types/react-native": "^0.64.5",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
+    "chai": "^4.3.4",
     "commitizen": "^4.2.4",
     "copyfiles": "^2.4.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.27.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "mocha": "^9.0.2",
+    "nyc": "^15.1.0",
     "prettier": "^2.3.0",
     "semantic-release": "^17.4.3",
+    "ts-node": "^10.1.0",
+    "tsconfig-paths": "^3.10.1",
     "tscpaths": "^0.0.9",
     "typescript": "^4.2.4"
   },
@@ -49,6 +61,23 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "mocha": {
+    "diff": true,
+    "reporter": "spec",
+    "spec": "tests/**/*.test.ts",
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ],
+    "watch-files": [
+      "src/**/*",
+      "tests/**/*"
+    ]
+  },
+  "nyc": {
+    "include": "src",
+    "exclude": "**/*.test.js"
   },
   "unpkg": "dist/index.js",
   "jsdelivr": "dist/index.js"
