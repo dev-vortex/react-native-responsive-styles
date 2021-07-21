@@ -32,6 +32,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^8.2.3",
     "@types/react-native": "^0.64.5",
@@ -64,12 +65,18 @@
     "diff": true,
     "reporter": "spec",
     "spec": "tests/**/*.test.ts",
-    "require": ["ts-node/register", "tsconfig-paths/register"],
-    "watch-files": ["src/**/*", "tests/**/*"]
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ],
+    "watch-files": [
+      "src/**/*",
+      "tests/**/*"
+    ]
   },
   "nyc": {
     "include": "src",
-    "exclude": "**/*.test.js" 
+    "exclude": "**/*.test.js"
   },
   "unpkg": "dist/index.js",
   "jsdelivr": "dist/index.js"
