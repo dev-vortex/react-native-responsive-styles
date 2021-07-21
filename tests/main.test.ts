@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import responsiveStyles, { ConvertPluginFunction } from '../src/index'
+import responsiveStyles, { ConvertPluginFunction } from '~/index'
 
 describe('[main]', () => {
     describe('import', () => {
